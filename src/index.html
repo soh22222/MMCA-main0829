@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMCAproject</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="descriptioncontainer.js"></script>
+</head>
+<body>
+    <div id="loading-layer">
+        <div id="loading-container">
+            <div id="loading-circle"></div>
+            <div id="loading-text"></div>    
+        </div>
+    </div>
+    <canvas class="webgl"></canvas>
+    <script type="module" src="./script5.js"></script>
+    <div id="start-layout" onclick="preventClick();">
+        <div id="start-container" onclick="preventClick();">
+            <div id="start-contents" onclick="preventClick();">
+                <div id="start-left">
+                    <div id="left-title" class="video-box">
+                        <div class="play-button" onclick="playLeft();"></div>
+                    </div>
+                    <div class="close-button" onclick="closeStart();"></div>
+                </div>
+                <div id="start-right">
+                    <div id="right-title" class="video-box">
+                        <div class="play-button" onclick="playRight();"></div>
+                    </div>
+                    <div class="close-button" onclick="closeStart();"></div>                   
+                </div>
+            </div>
+        </div>
+        <div id="selected-video">
+            <div id="video-container">
+                <div class="back-button" onclick="backToStart();"></div>
+                <div id="video-placeholder">
+                    <div id="content-video" style="padding:56.25% 0 0 0;position:relative;"><iframe id="start-video" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                </div>
+                <div class="close-buttonInContents" onclick="closeStart();"></div>
+            </div>
+        </div>
+    </div>
+    <div id="description" onclick="preventClick(); closePopup();">
+        <div id="desc-container" onclick="preventClick();">
+            <div id="desc-contents" onclick="preventClick();">
+            </div>
+            <div id="desc-close" class="close-buttonInContents" onclick="closePopup();"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>closeLoading();</script>

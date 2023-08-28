@@ -1,0 +1,308 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+#start-layout
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+#start-container{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    cursor: default;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#selected-video{
+    display: none;
+    width: 80%;
+    height: 80%;
+}
+
+.back-button{
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    bottom :97%;
+    background-image: url(./assets/back.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#start-contents{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#start-contents > #start-left{
+    width: 40vw;
+    height: calc(40vw * 9/16);
+    margin: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+#start-contents > #start-right{
+    width: 40vw;
+    height: calc(40vw * 9/16);
+    margin: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+}
+
+#left-title{
+    background-image: url(./assets/ltitle.png);
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: 3% 96%;
+    
+}
+
+#right-title{
+    background-image: url(./assets/rtitle.png);
+    background-repeat: no-repeat;
+    background-size: 47%;
+    background-position: 3% 96%;
+}
+
+.video-box{
+    width: 100%;
+    height: 90%;
+    border: 2px solid;
+    border-color: rgb(235, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.play-button{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/play.svg);
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#description{
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    backdrop-filter: blur(3px);
+}
+
+#desc-container{
+    position: relative;
+    width: 90%;
+    height: 70%;
+    cursor: default;
+}
+
+#desc-contents{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: scroll;
+}
+
+#content-image{
+    width: 400%;
+    height: 400%;
+    object-position: scroll;
+}
+
+.close-button{
+    position: absolute;
+   
+    right: 0vw;
+    width: 20%;
+    height: 20%;
+    top :105%;
+    background-image: url(./assets/home.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.close-buttonInContents{
+    position: absolute;
+    bottom: -40px;
+    right: 0vw;
+    width: 50px;
+    height: 60px;
+    top :103%;
+    background-image: url(./assets/home.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
+
+
+#loading-layer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    animation: bgfade 6s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+
+}
+
+#content-video{
+    width: 100%;
+    
+}
+
+#video-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+}
+
+#video-placeholder{
+    width: 100%;
+    height: calc(100% - 40px);
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+    overflow: hidden;
+    
+}
+
+#loading-layer > #loading-container{
+    width: 30vmin;
+    height: 30vmin;
+    display: block;
+    position: relative;
+}
+
+#loading-circle{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/loading.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: spin 3s linear infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bgfade {
+    0% {
+        background-color: rgba(0, 0, 0, 1);
+    }
+    75% {
+        background-color: rgba(0, 0, 0, 1);
+    }
+    100%{
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+#loading-text{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/loading-text.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
