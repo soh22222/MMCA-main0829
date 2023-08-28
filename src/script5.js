@@ -73,7 +73,7 @@ scene.traverse((object) => {
 
 //particle
 const particlesGeometry = new THREE.BufferGeometry()
-const count = 100
+const count = 1000
 const positions = new Float32Array(count * 3)
 //const textures = new Float32Array(count * 3)
 
@@ -87,19 +87,21 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 
 
 
 const particlesMaterial = new THREE.PointsMaterial()
+const particlesMaterial2 = new THREE.PointsMaterial()
 
-const particleTexture = textureLoader.load('texture/12.png')
-
+const particleTexture = textureLoader.load('texture/14.png')
+const particleTexture2 = textureLoader.load('texture/1.png')
 for (let i = 0; i < 4; i++) {
     const particlesMaterial = new THREE.PointsMaterial({
         map: textureLoader.load(`/texture/${i}.png`)
     })
 }
 
-particlesMaterial.size = 20
+particlesMaterial.size = 100
 particlesMaterial.sizeAttenuation = true
 particlesMaterial.color = new THREE.Color('white')
 particlesMaterial.map = particleTexture
+particlesMaterial2.map = particleTexture2
 particlesMaterial.transparent = true
 particlesMaterial.alphaMap = particleTexture
 //particlesMaterial.alphaTest = 0.001
@@ -107,8 +109,9 @@ particlesMaterial.depthWrite = false
 
 
 const dust = new THREE.Points(particlesGeometry, particlesMaterial)
+const dust2 = new THREE.Points(particlesGeometry, particlesMaterial2)
 //scene.add(dust)
-
+//scene.add(dust2)
 
 
 
@@ -391,7 +394,7 @@ const tick = () => {
 
     camera.lookAt(plane.position);
     dust.rotation.y = elapsedTime * 0.1
-
+    dust2.rotation.y = elapsedTime * -0.1
     raycaster.setFromCamera(mouse, camera)
     const modelIntersects = raycaster.intersectObject(clickables)
 

@@ -7,17 +7,18 @@
       }
 
       .cls-2 {
-        stroke: #fcfcfc;
+        stroke: #fbfbfb;
         stroke-linecap: round;
         stroke-linejoin: round;
+        stroke-width: 2px;
       }
     </style>
   </defs>
   <g id="_레이어_1-2" data-name="레이어 1">
-    <rect class="cls-1" width="303.42" height="303.42"/>
     <g>
+      <rect class="cls-1" x="0" width="303.42" height="303.42"/>
       <path class="cls-2" d="M151.71,47.58c57.51,0,104.13,46.62,104.13,104.13s-46.62,104.13-104.13,104.13-104.13-46.62-104.13-104.13"/>
-      <polyline class="cls-2" points="20.01 178.44 47.58 150.87 75.15 178.44"/>
+      <polyline class="cls-2" points="24.04 182.59 47.14 151.18 78.55 174.29"/>
     </g>
   </g>
 </svg>
