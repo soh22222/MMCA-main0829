@@ -205,20 +205,20 @@ gltfLoader.load("/models/world_click/world_click_image.gltf", (gltf) => {
         model2 = gltf.scene;
         //model2.color = new THREE.Color('red')
 
-        model2.position.y = -20
+        model2.position.y = -50
         model2.rotation.y = 120
         //scene.add(model2)
         const textureLoader = new THREE.TextureLoader()
         const slate = textureLoader.load("/images/slate.png")
         const material = new THREE.MeshStandardMaterial({
-            normalMap: slate
+            map: slate
         })
         model2.children.forEach((child) => {
             child.material = material
-            child.material.normalMap.center.x = 0.5
-            child.material.normalMap.center.y = 0.5
-            child.material.normalMap.repeat.x = -1
-            child.material.normalMap.repeat.y = 1
+        //     child.material.normalMap.center.x = 0.5
+        //     child.material.normalMap.center.y = 0.5
+        //     child.material.normalMap.repeat.x = -1
+        //     child.material.normalMap.repeat.y = 1
         })
 
         model2.children.forEach((child) => { child.position.z = child.position.z - 15 })
@@ -237,7 +237,8 @@ gltfLoader.load("/models/world_click/world_click_image.gltf", (gltf) => {
 
                 model4.position.y = -7
                 model4.children.forEach((child) => { clickables.add(child) })
-                clickables.position.y = -3
+                clickables.position.y = -4
+                
                 scene.add(clickables)
                 tick()
             });
@@ -374,10 +375,10 @@ const tick = () => {
     const deltaTime = elapsedTime - previousTime
     previousTime = elapsedTime
     //model.position.y = Math.sin(elapsedTime * 0.3) * 1.5
-    images.rotation.y = elapsedTime * 0.05
-    model2.rotation.y = elapsedTime * 0.05
-    model3.rotation.y = elapsedTime * -0.1
-    model4.rotation.y = elapsedTime * -0.05
+    // images.rotation.y = elapsedTime * 0.05
+    // model2.rotation.y = elapsedTime * 0.05
+    // model3.rotation.y = elapsedTime * -0.1
+    // model4.rotation.y = elapsedTime * -0.05
 
     nonimages.rotation.y = elapsedTime * 0.07
     nonarticles.rotation.y = elapsedTime * -0.05

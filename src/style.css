@@ -184,8 +184,8 @@ body
     width: 20%;
     height: 20%;
     top :102%;
-    background-image: url(./assets/home.svg);
-    background-size: 50%;
+    background-image: url(./assets/gohome.svg);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: top right;
     
@@ -196,15 +196,15 @@ body
     z-index: 2;
 }
 
-.close-buttonInContents{
+.close-buttonInImage{
     position: absolute;
     bottom: -40px;
     right: 0vw;
-    width: 50px;
-    height: 60px;
+    width: 120px;
+    height: 100px;
     top :101%;
-    background-image: url(./assets/home.svg);
-    background-size: contain;
+    background-image: url(./assets/gohome.svg);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: top right;
     
@@ -215,15 +215,15 @@ body
     z-index: 2;
 }
 
-.close-buttonInContents2{
+.close-buttonInVideo{
     position: absolute;
     bottom: -40px;
     right: 0vw;
-    width: 50px;
-    height: 60px;
+    width: 120px;
+    height: 100px;
     top :104%;
-    background-image: url(./assets/home.svg);
-    background-size: contain;
+    background-image: url(./assets/gohome.svg);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: top right;
     
